@@ -1,0 +1,273 @@
+body{
+  background-color: #110f0fea;
+  background-image: url('./../assets/img/fondopag.png');
+}
+header, .alert{
+  z-index: 100;
+}
+.description{
+  height: 25px;
+  overflow: hidden;
+  transition: height .3s ease-in .3s;
+}
+.description:hover{
+  height: 80px;
+}
+.banner{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-image: url('./../assets/img/cv1.jpg');
+  background-size: cover;
+  background-position: center;
+  }
+  .cover{
+    height: 400px;
+    color:white;
+    background-image:url(/assets/img/cv1.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+.responsive-iframe{
+  position: relative;
+  padding-top: 33.33%;
+
+}
+.responsive-iframe iframe{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+.videoy{
+ margin-left: auto;
+ margin-right: auto;
+ position: center;
+}
+
+.fw-300{
+  font-weight: 300;
+  color: white;
+}
+.centrar-texto{
+  text-align: center;
+}
+.iconos-nosotros{
+  display: flex;
+  justify-content: space-between;
+}
+.iconos{
+  flex-basis:calc(33.3% -  1rem);
+  text-align: center;
+}
+
+.parrafoInicial{
+  color: white;
+  font-family: 'arial';
+}
+.parrafoInicial h1{
+text-align: center;
+ font-size: 3em;
+ left: 50%;
+ font-family: 'arial';
+}
+
+.carrito{
+  min-height: 80vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+.table__productos{
+  display: flex;
+}
+.table__cantidad > input{
+  width: 40px;
+  border: none;
+  outline: 0;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+.hide, .remove{
+  display: none;
+}
+main{
+  max-width: 1200px;
+  height: calc(100vh+500); /*vh=1% de la altura de la ventana gráfica*/
+  padding: 2px;
+  margin: auto;
+}
+
+
+.box h5{
+  text-decoration: none;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.carousel{
+  box-shadow: 30px 0px 100px -55px rgb(243, 243, 243);
+
+
+}
+
+
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+  main{
+    max-width: 1200px;
+    height: calc(100vh+500); /*vh=1% de la altura de la ventana gráfica*/
+    padding: 10px;
+    margin: auto;
+  }
+
+}
+
+.bpago{
+padding-top: 30px;
+padding:40px;
+margin: auto;
+margin-left: auto;
+margin-right: auto;
+position: center;
+
+}
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+footer{
+ padding-top: 10px;
+  position:absolute;
+  padding-top:20px ;
+  box-shadow: 0px 0px 55px -20px rgb(255, 255, 255);
+  color: aliceblue;
+  background-color: black;
+  width: 1349px;
+  transform: translateY(20px)
+}
+footer:hover{
+  transition: all 0.25s;
+  transform: translateY(20px)
+}
+
+
+
+.rounded:hover{
+  transition: all 0.25s;
+  transform: translate(-15px);
+
+}
+.rounded{
+  box-shadow: 0px 0px 55px -20px rgb(238, 255, 0);
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+.container-form{
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    /* define el nombre de las líneas y las funciones de tamaño de línea de grid */
+    grid-template-columns: repeat(2,1fr);
+    /*Es el ancho del canal que separa las columnas de la grilla.*/
+    grid-gap: 50px;
+    margin-top: 10px;
+    margin-left: 370px;
+}
+.container-form h2{
+    color: rgb(255, 255, 255);
+    margin-left: 150px;
+    margin-bottom: 50px;
+    font-size: 35px
+}
+.container-form p{
+  font-size: 17px;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 15px;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+.container-form a i{
+    color: rgb(255, 255, 255);
+    margin-right: 10px;
+}
+.container-form form .campo, textarea{
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 16px;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    /*usada para establecer el estilo del contorno de un elemento.*/
+    outline: 2px;
+}
+.container-form form textarea{
+    max-width: 530px;
+    min-width: 530px;
+    min-height: 140px;
+    max-height: 150px;
+}
+.container-form .btn-enviar{
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    outline: 0px;
+    background: rgb(0, 0, 0);
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    margin-left: 180px;
+
+}
+.container-form .btn-enviar:hover{
+    background: #5b5b5b;
+}
+

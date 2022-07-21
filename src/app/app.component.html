@@ -1,0 +1,617 @@
+<body>
+  <nav class="navbar bg-black ">
+    <div class="container-fluid ">
+      <a class="navbar-brand text-white h5 " href="/">
+        <img src="./assets/img/logo.png" alt="" width="30" height="50">
+
+      </a>
+      <h3 class="text-white">Accesorios para motos JuanSer.</h3>
+
+
+      <button class="navbar-toggler text-white h5 bg-secondary " type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon text-white h5" onclick="aparecerboton2()"></span>
+      </button>
+
+
+      <div class="offcanvas offcanvas-end bg-black text-white h5"  tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-white h5" id="offcanvasNavbarLabel">Accesorios para motos JuanSer.</h5>
+          <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 text-white h5 nav">
+            <li class="nav-item text-primary" role="presentation">
+              <a class="nav-link text-white h5 active" id="pills-home-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-home"  type="button" role="tab" aria-controls="pills-home"
+                aria-selected="true">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white h5" id="pills-profile-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                aria-selected="false">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white h5" type="button" role="tab" id="pills-contact-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-contact" aria-controls="pills-contact" aria-selected="false">Carrito de
+                compras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white h5" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form"
+                type="button" role="tab" aria-controls="pills-form" aria-selected="false">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white h5" id="pills-form-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-nosotros" type="button" role="tab" aria-controls="pills-form"
+                aria-selected="false">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white h5" id="pills-reg-tab" data-bs-toggle="pill" data-bs-target="#pills-reg"
+                type="button" role="tab" aria-controls="pills-reg" aria-selected="false">Registrar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white h5" id="pills-ing-tab" data-bs-toggle="pill" data-bs-target="#pills-ing"
+                type="button" role="tab" aria-controls="pills-ing" aria-selected="false">Ingresar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a class="navbar-brand text-white h5" href="#" *ngIf="userLogged|async as user">
+      <img *ngIf="user.photoURL" src="{{user.photoURL}}" alt="" width="30" height="50" >
+      {{user.email}}
+    </a>
+    <div *ngIf="userLogged|async as user" >
+      <button *ngIf="user.email" class="btn btn-info" (click)="onClick()">
+        Logout
+      </button>
+    </div>
+  </nav>
+
+
+
+
+  <main>
+
+
+
+    <div class="alert container position-sticky top-0 alert-success hide" role="alert">
+
+      Producto Añadido al carrito!
+    </div>
+    <div class="alert container position-sticky top-0 alert-danger remove" role="alert">
+      Producto removido!
+    </div>
+
+    <div class="tab-content" id="pills-tabContent">
+      <!-- primer boton-->
+      <div
+        class="tab-pane fade show active container"
+        id="pills-home"
+        role="tabpanel"
+        aria-labelledby="pills-home-tab"
+      >
+      <span class="placeholder col-12 bg-secondary"></span>
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false" >
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+              <a href="https://goprocol.co/hero9/?gclid=Cj0KCQjwlK-WBhDjARIsAO2sErQoSMiD_SSqd9uJQG8Z4EM_FlX_9t9XZyaxFMm67F9K7dWxiR27gZ0aAuJ8EALw_wcB"><img src="./assets/img/apache.jpg" class="d-block w-100 h-100" alt="prueba de alt"></a>
+            <div class="carousel-caption d-none d-md-block ">
+              <h2>GoPro Hero9!</h2>
+              <p>Camaras para experiencias a todo video!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+              <a href="https://www.autecomobility.com/moto-victory-venom-250/p?gclid=CjwKCAjw-8qVBhANEiwAfjXLrshYoOpp32YFu2rD8IOAg_zfjXLNc9RA94s5EQOzWE58wqFilQJaBhoCwfoQAvD_BwE"><img src="./assets/img/venom.png" class="d-block w-100" alt="prueba de alt"></a>
+            <div class="carousel-caption d-none d-md-block text-black h5">
+              <h2>Intercomunicadores</h2>
+              <p>Modelos 2022!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+              <a href="https://pro-taper.com/sitio/"><img src="./assets/img/ns200.png" class="d-block w-100" alt="..."></a>
+            <div class="carousel-caption d-none d-md-block textblack">
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+<span class="placeholder col-12 bg-secondary"></span>
+<!--arranca lo que está debajo del carrousel-->
+
+
+<section>
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-12 col-sm-6 col-lg-5">
+      <img src="./assets/img/email.svg" alt="Imagen de una persona recibiendo correo" width="250" height="250">
+     </div>
+
+    <div class="col-12 col-sm-6">
+
+    </div>
+  </div>
+  <form action="">
+    <label class="text-white">Deje su correo electrónico para envío de promociones!</label>
+    <div class="d-flex">
+      <div class="flex-fill mr-2">
+        <input type="email" id="email" class="form-control"/>
+      </div>
+      <button type="submit" class="btn btn-secondary">
+        Enviar!
+      </button>
+    </div>
+  </form>
+</div>
+</section>
+<section>
+  <div class="container2 mt-5 mb-5 text-white">
+    <h4>Aquí nos vemos</h4>
+    <p>Cl. 17 #15 - 09, Bogotá, Cundinamarca</p>
+      <div class="responsive-iframe">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5542.60056563434!2d-74.07592536565238!3d4.609496410571771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9975492748d5%3A0x7f2966f8024d1dec!2sMundimotos%20Bogota%20-%20Caracas!5e0!3m2!1ses!2sco!4v1657594031337!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      </div>
+
+    </div>
+</section>
+
+<!--termina lo que está debado del carrousel-->
+
+      </div>
+      <div class="tab-pane fade show container" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
+
+        <div class="container-form">
+          <div class="info-form">
+            <h2>Contáctanos</h2>
+            <p> tus comentarios son muy importantes, por eso, ponemos a tu disposición los siguientes canales de
+              atención:</p>
+            <form form action="https://formspree.io/f/xgedbaog" method="POST" autocomplete="off">
+              <input type="text" name="nombre" placeholder="Tu Nombre" class="campo">
+              <input type="emal" name="email" placeholder="Tu Email" class="campo">
+              <textarea name="mensaje" placeholder="Tu Mensaje..."></textarea>
+              <input type="submit" name="enviar" value="Enviar Mensaje" class="btn-enviar">
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- segundo boton-->
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <h3 class="h4 m-4 text-white">Accesorios para motos!</h3>
+        <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Intercomunidador FC</h5>
+              <img src="./assets/img/accesorio1.jpg" class="card-img-top" alt=" ">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Intercomunicador marca Freeconn, conexión a música,
+                  llamadas y mucho mas.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 280000</span></h5>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-secondary button">Añadir al Carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Pato Motero</h5>
+              <img src="./assets/img/accesorio2.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Pato de goma con accesorios, perfecto acompañante para
+                  salir a rodar.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 32000</span></h5>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-secondary button">Añadir al Carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Guantes</h5>
+              <img src="./assets/img/ac3.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Guantes impermeables, perfectos para conducir y usar el
+                  celular.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 52000</span></h5>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-secondary button">Añadir al Carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Chaqueta</h5>
+              <img src="./assets/img/ac4.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Chaqueta con protección para conducir moto, perfecta para
+                  el frio e impermeable.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 450000</span></h5>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-secondary button">Añadir al Carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Pantalones </h5>
+              <img src="./assets/img/ac5.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Some quick example text to build on the card title and
+                  make up the bulk of the card's content.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 380000</span></h5>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-secondary button">Añadir al Carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Porta celular</h5>
+              <img src="./assets/img/ac6.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Lleva tu celular contigo durante todo el viaje, para
+                  apoyarte con mensajes y GPS.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 98000</span></h5>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-secondary button">Añadir al Carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Impermeable</h5>
+              <img src="./assets/img/ac7.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Impermeable perfecto para días lluviosos, perfecto para
+                  empacar y llevar en la maleta.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 70000</span></h5>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-secondary button">Añadir al Carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Maletero</h5>
+              <img src="./assets/img/ac8.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Maletero de amplio espacio, para transporte de bastante.
+                </p>
+                <h5 class="text-white">Precio: <span class="precio">$ 290000</span></h5>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-secondary button">Añadir al Carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Parrillas de lujo</h5>
+              <img src="./assets/img/ac9.png" class="card-img-top" alt=" ">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Parrilas para cualquier tipo de moto hechas en alumino.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 96000</span></h5>
+                <div class="d-grid gap-2">
+                <button class="btn btn-secondary button">Añadir al Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Calcomania protectora</h5>
+              <img src="./assets/img/ac10.png" class="card-img-top" alt=" ">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Cuida tu tanque de manera que no dañes ni rayes la pintura.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 20000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-secondary button">Añadir al Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Botas protectoras</h5>
+              <img src="./assets/img/ac11.png" class="card-img-top" alt=" ">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Cuida tus pies de una caida, perfectas para la lluvia ya que son impermeables.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 360000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-secondary button">Añadir al Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Camara GoPro 4k</h5>
+              <img src="./assets/img/ac12.png" class="card-img-top" alt=" ">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Perfecta para tus viajes, para las calles de la ciudad.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 580000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-secondary button">Añadir al Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Manilares de lujo</h5>
+              <img src="./assets/img/ac13.png" class="card-img-top" alt=" ">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Dale un nuevo aspecto con estos manilares afines al color que quieras.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 60000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-secondary button">Añadir al Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Exploradoras para viaje</h5>
+              <img src="./assets/img/ac14.png" class="card-img-top" alt=" ">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Ilumina tus caminos en la noche para evitar cualquier inpase.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 75000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-secondary button">Añadir al Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Candado para moto</h5>
+              <img src="./assets/img/ac15.png" class="card-img-top" alt=" ">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Cuida de robos tu moto bloqueando el freno de disco con este candado.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 50000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-secondary button">Añadir al Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-white">Maleta para viaje</h5>
+              <img src="./assets/img/ac16.png" class="card-img-top" alt=" ">
+              <div class="card-body">
+                <p class="card-text text-white-50 description">Maleta impermeable perfecta para lluvias y viajes.</p>
+                <h5 class="text-white">Precio: <span class="precio">$ 380000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-secondary button">Añadir al Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- tercer boton-->
+      <div class="tab-pane fade carrito" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+        <br>
+        <table class="table table-dark table-hover">
+          <thead>
+            <tr class="text-White">
+              <th scope="col">Número</th>
+              <th scope="col">Productos</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+            </tr>
+          </thead>
+          <tbody class="tbody">
+
+            <!-- acá reescribe el js-->
+
+          </tbody>
+        </table>
+        <br><br>
+        <div class="row mx-4">
+          <div class="col">
+            <h3 class="itemCartTotal text-white">Total: 0</h3>
+          </div>
+
+            <app-shop></app-shop>
+
+            <div class="tbody2" type role="alert">
+
+            <form *ngIf="userLogged|async as user" name="tmc1"method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/" >
+              <input name="merchantId"      type="hidden"  value="508029"   >
+              <input name="ac"              type="hidden"  value="4Vj8eK4rloUd272L48hsrarnUA" >
+              <input name="accountId"       type="hidden"  value="512321" >
+              <input name="description"     type="hidden"  value="Accesorios para motos pagina JuanSer"  >
+              <input name="referenceCode"   type="hidden"  value="TestPayU" >
+              <input name="amount"          id="tt"type="hidden"  value="0"   >
+              <input name="tax"             id="ti"type="hidden"  value="1"  >
+              <input name="taxReturnBase"   id="tai"type="hidden"  value="1" >
+              <input name="currency"        type="hidden"  value="COP" >
+              <input name="signature"       id="signature"  type="hidden"  value=" "  >
+              <input name="test"            type="hidden"  value="0" >
+              <input name="buyerEmail"      type="hidden"  value="{{user.email}}" >
+              <input name="responseUrl"     type="hidden"  value="http://www.test.com/response" >
+              <input name="confirmationUrl" type="hidden"  value="http://www.test.com/confirmation" >
+              <input class="btn btn-secondary" name="Submit2" onclick="crearBotonPayu()" type="hidden" value="Paga con PayU" >
+              <button  class="btn btn-secondary button" onclick="aparecerboton()">Comprar</button>
+
+
+            </form>
+
+
+            <!-- <button class="btn btn-success">COMPRAR</button> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- boton del "nosotros"-->
+
+      <div  class="tab-pane fade"
+      id="pills-nosotros"
+      role="tabpanel"
+      aria-labelledby="pills-profile-tab">
+      <section class="banner">
+        <h1 class="fw-300 centrar-texto">Nosotros</h1>
+        <div class="iconos-nosotros">
+        <div class="parrafoInicial">
+          <div class="iconos">
+            <img src="./assets/img/logo.png" alt="">
+            <p>Creo en el poder del reconocimiento y del empoderamiento para un gran engagement de los empleados, que a su vez es fundamental para el engagement de los clientes. El empoderamiento y el reconocimiento de los empleados es el núcleo de nuestra cultura y de cómo logramos un servicio al cliente excepcional
+            </p>
+          </div>
+
+        </div>
+
+        </div>
+
+      </section>
+      <div class="videoy">
+
+        <iframe width="1180" height="815" src="https://www.youtube-nocookie.com/embed/1UdhXzgMTek" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      </div>
+
+      </div>
+
+      <!-- cuarto boton registrar-->
+      <div class="tab-pane fade reg " id="pills-reg" role="tabpanel" aria-labelledby="pills-reg-tab">
+        <div class="tab-pane fade show container" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
+
+          <div class="container-form">
+            <div class="info-form">
+              <h2>Registrate</h2>
+              <p> Para disfrutar de nuestros beneficios unete a nuestros beneficios ingresa tus datos en el siguiente :
+              </p>
+              <form [formGroup]="formReg" (ngSubmit)="registrar()">
+                <div class="mb-3">
+                  <label class="form-label text-white">Email</label>
+                  <input type="text" class="form-control" formControlName="email">
+                  <label class="form-label text-white">Password</label>
+                  <input type="password" class="form-control" formControlName="password">
+                </div>
+                <input type="submit" value="Registrar">
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <!-- quinto boton Login-->
+      <div class="tab-pane fade ing" id="pills-ing" role="tabpanel" aria-labelledby="pills-ing-tab">
+        <div class="tab-pane fade show container" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
+
+          <div class="container-form">
+            <div class="info-form">
+              <h2>Ingresar</h2>
+              <p> Coloca tus datos para poder disfrutar de tus beneficios:</p>
+              <form [formGroup]="formLogin" (ngSubmit)="Ingresar()">
+                <div class="mb-3">
+                  <label class="form-label text-white">Email</label>
+                  <input type="text" class="form-control" formControlName="email">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label text-white">Password</label>
+                  <input type="password" class="form-control" formControlName="password">
+                </div>
+                <input type="submit" value="Ingresar">
+              </form>
+              <button class="btn btn-info" (click)="ingresarG()">Ingresar con Google</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sexto boton Logout-->
+      <div class="tab-pane fade ing" id="pills-ing" role="tabpanel" aria-labelledby="pills-ing-tab">
+        <div class="tab-pane fade show container" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
+
+          <div class="container-form">
+            <div class="info-form">
+              <h2>Haz Iniciado sesion</h2>
+              <p> Coloca tus datos para poder disfrutar de tus beneficios:</p>
+              <form [formGroup]="formLogin" (ngSubmit)="Ingresar()">
+                <div class="mb-3">
+                  <label class="form-label text-white">Email</label>
+                  <input type="text" class="form-control" formControlName="email">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label text-white">Password</label>
+                  <input type="password" class="form-control" formControlName="password">
+                </div>
+                <input type="submit" value="Ingresar">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-white">&copy; 2022 Camilo y Sergio, Inc</p>
+
+    <a href="/"
+      class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <img src="./assets/img/logo.png" class="bi me-2" width="30" height="50">
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-white">Inicio</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Contexto</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Politicas</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Preguntas Frecuentes</a></li>
+    </ul>
+  </footer>
+
+
+  <!-- JavaScript Bundle with Popper -->
+
+  <script>(function (w, d) { w.CollectId = "62bd90ed7fd5da5e20c69f4d"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async = true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+
+</body>
